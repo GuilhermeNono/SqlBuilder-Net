@@ -5,6 +5,11 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Copyright>Guilherme Nono</Copyright>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageProjectUrl>https://github.com/GuilhermeNono/SqlBuilder-Net/new/master?filename=README.md</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/GuilhermeNono/SqlBuilder-Net/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/GuilhermeNono/SqlBuilder-Net</RepositoryUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>
