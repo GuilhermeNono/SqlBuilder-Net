@@ -31,5 +31,5 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
 
-      - name: Integration tests
+      - name: Tests
         run: dotnet test ./SqlBuilder.sln --no-build
