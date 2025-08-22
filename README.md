@@ -9,14 +9,6 @@ SqlBuilder-Net is a .NET library designed to simplify and control the constructi
 - **Organization**: your code becomes cleaner and easier to maintain.
 - **Flexibility**: supports various scenarios and databases.
 
-## 🚦 Installation
-
-Add the package via NuGet:
-
-```bash
-dotnet add package SqlBuilder-Net
-```
-
 ## 🛠️ How to use
 
 Below is a practical example of using the library. The user must:
