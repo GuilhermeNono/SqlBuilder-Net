@@ -1,37 +1,37 @@
 # SqlBuilder-Net 🚀
 
-SqlBuilder-Net é uma biblioteca .NET criada para facilitar e controlar a construção de comandos SQL dinâmicos com uso seguro de variáveis escalares. Ela ajuda desenvolvedores a montar queries SQL de forma mais legível, evitando concatenação manual de strings e riscos de SQL Injection.
+SqlBuilder-Net is a .NET library designed to simplify and control the construction of dynamic SQL commands, using scalar variables in a safe way. It helps developers build SQL queries more elegantly, avoiding manual string concatenation and SQL Injection risks.
 
-## ✨ Principais vantagens
+## ✨ Main Advantages
 
-- **Segurança**: uso de parâmetros escalares evita SQL Injection.
-- **Facilidade**: construa SQLs complexos de forma fluida e intuitiva.
-- **Organização**: seu código fica mais limpo e fácil de manter.
-- **Flexibilidade**: suporta diferentes cenários e bancos de dados.
+- **Security**: uses scalar parameters to prevent SQL Injection.
+- **Ease of Use**: build complex SQLs fluently and intuitively.
+- **Organization**: your code becomes cleaner and easier to maintain.
+- **Flexibility**: supports various scenarios and databases.
 
-## 🚦 Instalação
+## 🚦 Installation
 
-Adicione o pacote via NuGet:
+Add the package via NuGet:
 
 ```bash
 dotnet add package SqlBuilder-Net
 ```
 
-## 🛠️ Como usar
+## 🛠️ How to use
 
-Abaixo, um exemplo prático do uso da biblioteca. O usuário deve:
+Below is a practical example of using the library. The user must:
 
-1. Criar um filtro que implemente `IFilterParam`, onde as variáveis escalares serão consultadas.
-2. Implementar uma classe que herda de `SqlBuilder<TR, TFilter>`.
-3. Instanciar a classe e acessar a query montada.
+1. Create a filter that implements `IFilterParam`, where scalar variables will be used.
+2. Implement a class that inherits from `SqlBuilder<TEntity, TFilter>`.
+3. Instantiate the class and access the generated query.
 
 ```csharp
-// Filtro implementando IFilterParam
+// Filter implementing IFilterParam
 public record FindByUserFilter(Guid Id) : IFilterParam
 {
 }
 
-// Classe customizada estendendo SqlBuilder
+// Custom class extending SqlBuilder
 public class FindByUserQuery(FindByUserFilter filter) : SqlBuilder<UserEntity, FindByUserFilter>(filter)
 {
     protected override void Prepare()
@@ -48,7 +48,7 @@ public class FindByUserQuery(FindByUserFilter filter) : SqlBuilder<UserEntity, F
 
 public class Main()
 {
-  // Utilização
+  // Usage
   var sql = new FindByUserQuery(new FindByUserFilter(id));
 
   string query = sql.Query;
@@ -56,19 +56,19 @@ public class Main()
 }
 ```
 
-## 📚 Exemplos de uso comum
+## 📚 Common Use Cases
 
-- **Montar filtros dinâmicos**: adicione condições conforme regras do negócio.
-- **Evitar concatenação de strings**: use métodos fluentes para compor queries.
+- **Build dynamic filters**: add conditions according to business rules.
+- **Avoid string concatenation**: use fluent methods to compose queries.
 
-## 👨‍💻 Testes
+## 👨‍💻 Tests
 
-Exemplos mais completos podem ser encontrados em `SqlBuilder.Tests.SqlBuilderTest.cs`. Recomenda-se acompanhar os testes para entender diferentes cenários de uso.
+More complete examples can be found in `SqlBuilder.Tests.SqlBuilderTest.cs`. It's recommended to check the tests to understand different usage scenarios.
 
-## 🤝 Contribua
+## 🤝 Contribute
 
-Sugestões, PRs e issues são bem-vindos! Sinta-se à vontade para colaborar.
+Suggestions, PRs and issues are welcome! Feel free to collaborate.
 
 ---
 
-Feito com ❤️ por [@GuilhermeNono](https://github.com/GuilhermeNono)
+Made with ❤️ by [@GuilhermeNono](https://github.com/GuilhermeNono)
